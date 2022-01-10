@@ -14,11 +14,13 @@
 		<link href="/app/input.css" rel="stylesheet">
 		<link href="/app/animate.css" rel="stylesheet">
 		<link rel="shortcut icon" href="/favicon.ico">
-		<script type="text/javascript">addAnimation('animate__bounceInDown', 'mainCont');
-		VK.Widgets.Group("vkGrp", {mode: 4, width: "min-content", height: "500", color1: '573f26', color2: 'dce5f4', color3: '12669F'}, 168368623);</script>
+		<script type="text/javascript">VK.Widgets.Group("vkGrp", {mode: 4, width: "min-content", height: "500", color1: '573f26', color2: 'dce5f4', color3: '12669F'}, 168368623);</script>
 	</head>
 
-<a href="#" onclick="loadePage('pages/auth.html')">Test content</a>
+<div class="jab">
+	<span id="pagesAvialable"></span>
+	<button onclick="loadPage()">Load selected</button>
+</div>
 			<body>
 				<div class="container-md animate__animated" id="mainCont">
 
@@ -28,7 +30,7 @@
 				</div>
 				
 				<script>
-				  req = new request('', {key:"secureKey"}, 'false');
+				  request = new request('', {key:"secureKey"}, 'false');
 				  const app = new Vue({
 					el: '#mainCont',
 					data: {
@@ -49,16 +51,38 @@
 							 }, 1000);
 					}
 				
-					function loadePage(path) {
+					function loadPage() {
+						let tplSel = $('input[name*="tplSel"]:checked').val();
 						addAnimation('animate__backOutRight', 'mainCont');
 						setTimeout(() => {
-							app.content = req.sendGet(path);
-						}, 1500);
+							app.content = request.sendGet('pages/'+tplSel);
+						}, 1000);
 						setTimeout(() => {
 							addAnimation('animate__bounceInDown', 'mainCont');
 						}, 1000);
 					}
+					
+					(function () {
+						let indexPages = JSON.parse(request.sendGet('pages'));
+						for (var value of indexPages) {
+							if(value.toLowerCase().indexOf('.html'.toLowerCase())) {
+								$('#pagesAvialable').append(
+									$('<input>').prop({
+										type: 'radio',
+										id: value,
+										name: 'tplSel',
+										value: value
+									})
+								).append(
+									$('<label>').prop({
+										for: value
+									}).html(value)
+								).append('<br />')
+							}
+						}
+					 }());
 				</script>
+				
 			</body>
 
 	</html>

@@ -54,6 +54,10 @@ html {
     padding: 15px;
 }
 
+input[type="radio"] {
+	margin: 5;
+}
+
 body {
 	background-color: #ffffff00;
 }
@@ -84,7 +88,6 @@ td {
 		.auth {
 			margin: 15vh auto;
 			max-width: fit-content;
-			min-width: 220px;
 		}
 
 		.auth > .authBtn {
@@ -139,7 +142,7 @@ td {
 
 	.jab {
 		margin: 15px;
-		min-width: min-content;
+		padding: 10;
 		border-radius: 5px;
 		background: linear-gradient(107deg, #352319d1 0%,#e2a371e3 100%);
 		box-shadow: -3.1px 5.1px 22px rgb(19 23 36 / 83%);
