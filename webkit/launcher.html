@@ -1,57 +1,64 @@
 	<html>
+		
 
-		<head>
-			<meta charset="UTF-8" />
-			<script src="js/bootstrap.js"></script>
-			<script src="js/vue.js"></script>
-			<script src="js/request.class.js"></script>
-			<link href="css/bootstrap.css" rel="stylesheet">
-			<link href="app/styles.css" rel="stylesheet">
-			<link href="app/input.css" rel="stylesheet">
-			<link href="app/animate.min.css" rel="stylesheet">
-			<script src="https://vk.com/js/api/openapi.js?168"></script>
-			<script>VK.Widgets.Group("vkGrp", {mode: 4, width: "500", color1: '573f26', color2: 'dce5f4', color3: '12669F'}, 168368623);</script>
-		</head>
+	<head>
+		<meta charset="UTF-8" />
+		<script src="/js/bootstrap.js"></script>
+		<script src="/js/vue.js"></script>
+		<script src="/js/request.class.js"></script>
+		<script src="/js/jquery.js"></script>
+		<script src="https://vk.com/js/api/openapi.js?168"></script>
+		<link href="/css/bootstrap.css" rel="stylesheet">
+		
+		<link href="/app/styles.css" rel="stylesheet">
+		<link href="/app/input.css" rel="stylesheet">
+		<link href="/app/animate.css" rel="stylesheet">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<script type="text/javascript">addAnimation('animate__bounceInDown', 'mainCont');
+		VK.Widgets.Group("vkGrp", {mode: 4, width: "min-content", height: "500", color1: '573f26', color2: 'dce5f4', color3: '12669F'}, 168368623);</script>
+	</head>
 
-		<body>
-			<div class="container" id="mainCont">
-				<div class="loadedPage" v-html="content"></div>
-				<p class="status">{{status}}</p>
+<a href="#" onclick="loadePage('pages/auth.html')">Test content</a>
+			<body>
+				<div class="container-md animate__animated" id="mainCont">
+
+					<div class="loadedPage" v-html="content">
+					
+					</div>
+				</div>
 				
-				<template>
-				  <a onclick="tes('pages/authorise.html')">Click me!</a>
-				</template>
-
-			</div>
-			
-			<script>
-			  req = new request('', {key:"secureKey"}, 'false');
-			  const app = new Vue({
-				el: '#mainCont',
-			    data: {
-					  content: 'Waiting for HTML...',
-					  status: new Date()
-				},
-
-				methods: {
-					  updateContent() {
-						this.status = new Date();
-					  }
+				<script>
+				  req = new request('', {key:"secureKey"}, 'false');
+				  const app = new Vue({
+					el: '#mainCont',
+					data: {
+						content: 'Waiting for HTML...',
 					},
 
-				mounted() {
-				  console.log('Foxxey launcher started!');
-				  setInterval(() => {
-					this.updateContent();
-				  }, 1000);
-				}
-			  });
-			</script>
-			
-			<script>
-				function tes(path) {
-					app.content = req.sendGet(path);
-				}
-			</script>
-		</body>
+					mounted() {
+						console.log('Foxxey launcher started!');
+					}
+				  });
+				</script>
+				
+				<script>
+					function addAnimation(animation, block) {
+							 $('#'+block).addClass(animation);
+							 setTimeout(() => {
+								$('#'+block).removeClass(animation);
+							 }, 1000);
+					}
+				
+					function loadePage(path) {
+						addAnimation('animate__backOutRight', 'mainCont');
+						setTimeout(() => {
+							app.content = req.sendGet(path);
+						}, 1500);
+						setTimeout(() => {
+							addAnimation('animate__bounceInDown', 'mainCont');
+						}, 1000);
+					}
+				</script>
+			</body>
+
 	</html>

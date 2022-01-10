@@ -13,6 +13,15 @@
 }
 
 @font-face {
+	font-family: 'FSElliotPro-Bold';
+	src: url('fonts/FSElliotPro-Bold.eot');
+	src: url('fonts/FSElliotPro-Bold.ttf') format('truetype'), url('fonts/FSElliotPro-Bold.svg#FSElliotPro-Bold') format('svg'), url('fonts/FSElliotPro-Bold.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
 	font-family: 'FSElliotPro-Heavy';
 	src: url('fonts/FSElliotPro-Heavy.eot');
 	src: url('fonts/FSElliotPro-Heavy.ttf') format('truetype'), url('fonts/FSElliotPro-Heavy.svg#FSElliotPro-Heavy') format('svg'), url('fonts/FSElliotPro-Heavy.eot?#iefix') format('embedded-opentype');
@@ -35,28 +44,95 @@
 }
 
 /* App Styles */
+html {
+	height: 100%;
+	overflow-x: hidden;
+    background-image: url(/app/img/bg.png);
+    background-position: center center;
+    background-size: cover;
+    border: 1px solid #c98826;
+    padding: 15px;
+}
+
+body {
+	background-color: #ffffff00;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-family: 'FSElliotPro-Bold';
+}
+
 .status {
 	font-family: 'Minecraft';
 	font-size: 8pt;
 }
 
 .loadedPage {
+	min-width: 420px;
 	font-family: 'FSElliotPro';
+	background-color: #eadcc97a;
+    border-radius: 5px;
+	border: 1px solid brown;
 }
 
 td {
-	border-width: 1;
 	vertical-align: top;
 }
 
-.auth {
-	margin: 0 auto;
-	width: fit-content;
-}
+/* Auth */
+		.auth {
+			margin: 15vh auto;
+			max-width: fit-content;
+			min-width: 220px;
+		}
 
-#vkGrp {
-	height: auto;
-	width: 100%;
+		.auth > .authBtn {
+			font-family: 'FSElliotPro-Heavy';
+			background-color: #abca4e;
+			border-radius: 4px;
+			font-size: 23px;
+			color: #ffffff;
+			width: 100%;
+			height: 70px;
+			border: 0;
+		}
+		
+		.auth > .authBtn:hover {
+			background-color: #b8d74f;
+		}
+		
+		.auth > .authBtn:active {
+			opacity: 0.5;
+		}
+
+		.auth > .authMrg {
+			margin: 15 0;
+		}
+		
+		.auth > .linksB {
+			margin: 15 0;
+			display: flow-root;
+		}
+		
+		.auth > .linksB > a{
+			padding: 5px;
+			width: fit-content;
+			font-family: 'FSElliotPro-Heavy';
+			color: #ffffff;
+		}
+		
+		.auth > .linksB > a:hover {
+			transition: 0.3s;
+			background-color: #ffffff57;
+			text-decoration: solid;
+			border-radius: 4px;
+		}
+/* Auth */
+
+.blockHeader {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPcAAAA8CAYAAAC6oywkAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNmlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjarY6xSsNQFEDPi6LiUCsEcXB4kygotupgxqQtRRCs1SHJ1qShSmkSXl7VfoSjWwcXd7/AyVFwUPwC/0Bx6uAQIYODCJ7p3MPlcsGo2HWnYZRhEGvVbjrS9Xw5+8QMUwDQCbPUbrUOAOIkjvjB5ysC4HnTrjsN/sZ8mCoNTIDtbpSFICpA/0KnGsQYMIN+qkHcAaY6addAPAClXu4vQCnI/Q0oKdfzQXwAZs/1fDDmADPIfQUwdXSpAWpJOlJnvVMtq5ZlSbubBJE8HmU6GmRyPw4TlSaqo6MukP8HwGK+2G46cq1qWXvr/DOu58vc3o8QgFh6LFpBOFTn3yqMnd/n4sZ4GQ5vYXpStN0ruNmAheuirVahvAX34y/Axk/96FpPYgAAACBjSFJNAAB6JQAAgIMAAPn/AACA6AAAUggAARVYAAA6lwAAF2/XWh+QAAAB/ElEQVR42uzbsU7jQBQF0JnECJaNkJD4EqigXL572+34FSQaSESIqShIseu82LOZ8TkdEpfEz74xlvLyr9v7mxSzCebeg7mzYO48mLsI5l7MZZZzWRaeyz+Pb5GAJnU/V6uDQ33fp5yznJzcCee6zWad+t1u8B/OOaePj11adks5ObkTznUp8umRU5KTkzvtnGduaJRyg3IDyg0oN6DcgHIDyg3KDdQk930fCj7ePXTB17wK5n4Ec2/B3DaYezWX8eby++nPtuT1ecTrXUc7GHyfz+7cMFPRu28ask22v71iW8dcDp1L6etzytcbc56Tlnv99vf/sr62VxaL/O3n1rd1vo7XXMaZS+nrM6r0duWk5R70iZP3fm8G2zrmMvJcSl+fUQPm0u+/xDHnYQDP3NAo5QblBpQbUG5AuQHlBpQblBuoST7m+7QlHbGFFhLdDvoPx3cZzEW316LbVmt1G++8D7k+3bmhUV0tb3TKLbQxt4NqOb7SOcY9702VO7rlU3obqZbjK51j3PPeVLmjWz7Ft4MqOb7W59n6dT2EZ25olHKDcgPKDSg3oNyAcgPKDcoN1CT73m/dWt+Ww50b2NMZQd1a35ZDuWer9W05lHu2bHfhmRuUG1BuQLkB5QaUG1BuUG5AuYGTZSsM3LkB5QaUG5jGJwAAAP//AwDL+Br/xTvQBQAAAABJRU5ErkJggg==);
+	background-repeat: repeat-x;
 }
 
 /* Just A Box */
@@ -74,6 +150,19 @@ td {
 		border-radius: 5px;
 		padding: 10px;
 	}
+	
+	.jabTitB {
+		position: relative;
+		width: 383px;
+		height: 111px;
+		background: url(img/block.png) no-repeat;
+		color: #FFF;
+		font-size: 23px;
+		font-weight: 300;
+		line-height: 108px;
+		text-indent: 48px;
+		letter-spacing: 0.01em;
+	}
 			
 	.jab > .bTit {
 		padding: 3px 10px 0px;
@@ -85,3 +174,15 @@ td {
 	}
 
 /* Just A Box Ended */
+
+/* SideBar */
+#main-sidebar {
+	left: 0;
+    top: 0;
+	float: left;
+	width: 23%;
+	height: 100%;
+	position: fixed;
+	background-color: #495054;
+	color: white;
+}
