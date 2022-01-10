@@ -1,0 +1,87 @@
+@font-face {
+	font-family: 'Roboto-Black';
+	src: url('fonts/Roboto-Black.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'FSElliotPro';
+	src: url('fonts/FSElliotPro.eot');
+	src: url('fonts/FSElliotPro.woff2') format('woff2'), url('fonts/FSElliotPro.woff') format('woff'), url('fonts/FSElliotPro.ttf') format('truetype'), url('fonts/FSElliotPro.svg#FSElliotPro') format('svg'), url('fonts/FSElliotPro.eot?#iefix') format('embedded-opentype');
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'FSElliotPro-Heavy';
+	src: url('fonts/FSElliotPro-Heavy.eot');
+	src: url('fonts/FSElliotPro-Heavy.ttf') format('truetype'), url('fonts/FSElliotPro-Heavy.svg#FSElliotPro-Heavy') format('svg'), url('fonts/FSElliotPro-Heavy.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'FuturaMediumC';
+	src: url('fonts/FuturaMediumC.eot');
+	src: url('fonts/FuturaMediumC.woff2') format('woff2'), url('fonts/FuturaMediumC.woff') format('woff'), url('fonts/FuturaMediumC.ttf') format('truetype'), url('fonts/FuturaMediumC.svg#FuturaMediumC') format('svg'), url('fonts/FuturaMediumC.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Minecraft';
+	src: url('fonts/minecraft.ttf') format('truetype');
+	font-style: normal;
+}
+
+/* App Styles */
+.status {
+	font-family: 'Minecraft';
+	font-size: 8pt;
+}
+
+.loadedPage {
+	font-family: 'FSElliotPro';
+}
+
+td {
+	border-width: 1;
+	vertical-align: top;
+}
+
+.auth {
+	margin: 0 auto;
+	width: fit-content;
+}
+
+#vkGrp {
+	height: auto;
+	width: 100%;
+}
+
+/* Just A Box */
+
+	.jab {
+		margin: 15px;
+		min-width: min-content;
+		border-radius: 5px;
+		background: linear-gradient(107deg, #352319d1 0%,#e2a371e3 100%);
+		box-shadow: -3.1px 5.1px 22px rgb(19 23 36 / 83%);
+	}
+			
+	.jab > .bCont {
+		display: block;
+		border-radius: 5px;
+		padding: 10px;
+	}
+			
+	.jab > .bTit {
+		padding: 3px 10px 0px;
+		font-size: 12pt;
+		color: #dc8d40d1;
+		border-bottom: 2px solid #876609;
+		width: max-content;
+		font-family: 'FuturaMediumC';
+	}
+
+/* Just A Box Ended */

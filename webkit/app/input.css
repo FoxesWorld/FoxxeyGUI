@@ -1,0 +1,207 @@
+		select,
+		input,
+		textarea,
+		button {
+			outline: none;
+		}
+
+		.inb {
+			display: flow-root;
+			position: relative;
+			margin: 5px 0px;
+		}
+
+		.inb input[type="text"] {
+			-webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+			-moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+			box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+			background: linear-gradient(-30deg, #ffca7687, #a44300a3);
+			height: 46px;
+			width: 100%;
+			padding: 18px 14px 4px;
+			color: #765947;
+			box-sizing: border-box;
+			font-weight: 600;
+			font-size: 14px;
+			border-radius: 4px;
+			border: 0;
+			text-align: left;
+			font-family: "FSElliotPro";
+		}
+
+		.inb input[type="text"]:focus,
+		.inb input[type="text"]:hover {
+			background: linear-gradient(-30deg, #e0903087, #e06f227a);
+			color: #343434;
+		}
+
+		.inb input[type="text"]:focus~label,
+		.inb input[type="text"]:not(:focus):valid~label {
+			top: 10px;
+			left: 14px;
+			font-size: 9px;
+		}
+
+		.inb label {
+			position: absolute;
+			pointer-events: none;
+			font-family: montserrat, sans-serif;
+			font-weight: 600;
+			color: #938972;
+			top: 15px;
+			left: 5px;
+			font-size: 13px;
+			text-transform: uppercase;
+			margin: 0px 10px;
+			transition: 0.2s;
+		}
+
+		.auth button {
+			position: relative;
+			width: 328px;
+			height: 116px;
+			background: url(img/btn/authBtn.png) no-repeat 0 1px;
+			background-size: cover;
+			border: 0;
+			outline: 0;
+			text-shadow: 0 4px 13px rgba(20, 27, 44, 0.84);
+			color: #FFF;
+			font-family: "FSElliotPro";
+			font-size: 19px;
+			font-weight: 700;
+			text-indent: 6px;
+		}
+
+		.auth button:hover {
+			border: 0;
+			transition: 0.3s;
+			transform: translateY(-10px);
+		}
+		
+		.auth button b {
+			position: relative;
+		}
+		
+		.auth button:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 328px;
+			height: 106px;
+			background: url(img/btn/authBtn.png) no-repeat 0 -107px;
+			opacity: 0;
+		}
+
+		.auth button:hover:before {
+			opacity: 1;
+		}
+		
+		/* OPTION SELECT*/
+		.option_select {
+			background: #eae6d6;
+			font-family: montserrat, sans-serif;
+			font-weight: 500;
+			position: relative;
+			width: 128px;
+			height: 46px;
+			display: inline-block;
+			transition: .3s ease;
+			margin: 15;
+			-webkit-box-shadow: 0 3px 21px rgba(208, 198, 184, .3);
+			-moz-box-shadow: 0 3px 21px rgba(208, 198, 184, .3);
+			box-shadow: 0 3px 21px rgba(208, 198, 184, .3);
+			border-radius: 4px;
+		}
+
+		.option_select:hover {
+			background: #f1eddd;
+		}
+
+		.option_select_text {
+			cursor: pointer;
+			position: relative;
+			font-family: montserrat, sans-serif;
+			font-weight: 600;
+			color: #765947;
+			-webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+			-moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+			box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+			background: linear-gradient(-30deg, #d5983787, #8c56317a);
+			width: auto;
+			height: 46px;
+			padding: 10px 10px 10px 0;
+			font-size: 14px;
+			border-radius: 4px;
+			border: none;
+		}
+
+		.option_select_text:focus {
+			outline: none;
+		}
+
+		.option_select_text option {
+			font-family: montserrat, sans-serif;
+			font-size: 13px;
+			color: #000;
+		}
+
+		.option_select .option_select_text {
+			appearance: none;
+			-webkit-appearance: none;
+			padding: 14px 0 0 14px;
+		}
+
+		.option_select:after {
+			content: '';
+			position: absolute;
+			top: 20px;
+			right: 14px;
+			width: 12px;
+			height: 8px;
+			background: url(img/CParrow.png) no-repeat;
+			pointer-events: none;
+			font-family: montserrat, sans-serif;
+			font-weight: 600;
+		}
+
+		.option_select_label {
+			text-transform: uppercase;
+			font-size: 13pt;
+			color: #938972;
+			font-family: montserrat, sans-serif;
+			font-weight: 600;
+			position: absolute;
+			pointer-events: none;
+			left: 18px;
+			top: 15px;
+			transition: .2s ease all;
+			width: 100%;
+		}
+
+		.option_select_text:focus~.option_select_label,
+		.option_select_text:valid~.option_select_label {
+			top: 5px;
+			left: 14px;
+			transition: .2s ease all;
+			font-size: 9px;
+		}
+
+		.option_select_bar {
+			position: relative;
+			display: inline-block;
+			width: auto;
+		}
+
+		.option_select_bar:before {
+			left: 50%;
+		}
+
+		.option_select_bar:after {
+			right: 50%;
+		}
+
+		.option_select_text:focus~.option_select_bar:before,
+		.option_select_text:focus~.option_select_bar:after {
+			width: 50%;
+		}
