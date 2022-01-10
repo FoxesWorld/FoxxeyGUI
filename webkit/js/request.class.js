@@ -46,6 +46,13 @@ function request(path, args, timeDelay) {
 		xmlhttp.send(p.slice(0,-1));
 	};
 	
+	this.sendGet = function httpGet(theUrl) {
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.open("GET", theUrl, false); // false for synchronous request
+		xmlHttp.send(null);
+		return xmlHttp.responseText;
+	};
+	
 	this.upload = function( file, params, progress, load){
 		
 		let xhr = this.getXmlHttp();
