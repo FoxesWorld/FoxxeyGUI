@@ -7,11 +7,14 @@
 		<script src="/js/vue.js"></script>
 		<script src="/js/request.class.js"></script>
 		<script src="/js/jquery.js"></script>
+		<script src="/js/notify.min.js"></script>
 		<script src="https://vk.com/js/api/openapi.js?168"></script>
 		<link href="/css/bootstrap.css" rel="stylesheet">
 		
 		<link href="/app/styles.css" rel="stylesheet">
-		<link href="/app/input.css" rel="stylesheet">
+		<link href="/app/font-awesome.css" rel="stylesheet">
+		<link href="/app/input.css"   rel="stylesheet">
+		<link href="/app/checkBox.css"   rel="stylesheet">
 		<link href="/app/animate.css" rel="stylesheet">
 		<link rel="shortcut icon" href="/favicon.ico">
 		<script type="text/javascript">VK.Widgets.Group("vkGrp", {mode: 4, width: "min-content", height: "500", color1: '573f26', color2: 'dce5f4', color3: '12669F'}, 168368623);</script>
@@ -20,9 +23,15 @@
 <div class="jab">
 	<span id="pagesAvialable"></span>
 	<button onclick="loadPage()">Load selected</button>
+			<div class="cbox">
+			  <label for="check01">
+				<input type="checkbox" id="check01"/>
+				<span class="items">Test</span>
+			  </label>  
+			</div>
 </div>
 			<body>
-				<div class="container-md animate__animated" id="mainCont">
+				<div class="container-xl animate__animated" id="mainCont">
 
 					<div class="loadedPage" v-html="content">
 					
@@ -45,21 +54,34 @@
 				
 				<script>
 					function addAnimation(animation, block) {
-							 $('#'+block).addClass(animation);
+							block.addClass(animation);
 							 setTimeout(() => {
-								$('#'+block).removeClass(animation);
+								block.removeClass(animation);
 							 }, 1000);
 					}
 				
 					function loadPage() {
 						let tplSel = $('input[name*="tplSel"]:checked').val();
-						addAnimation('animate__backOutRight', 'mainCont');
+						addAnimation('animate__backOutRight', $('#mainCont'));
 						setTimeout(() => {
 							app.content = request.sendGet('pages/'+tplSel);
 						}, 1000);
 						setTimeout(() => {
-							addAnimation('animate__bounceInDown', 'mainCont');
+							addAnimation('animate__bounceInDown', $('#mainCont'));
 						}, 1000);
+					}
+					
+					function serversLoad() {
+						let servers = ['HardTech', 'FoxesWorld'];
+						let counter = 0;
+						for (var value of servers) {
+							let newSrv = '<div id="srv-'+counter+'" class="srvBox animate__animated" onclick="addAnimation(\'animate__tada\', $(this))">' +
+											'<h4 id="title-'+counter+'">'+ value +'</h4>'+
+											'<img class="srvbImg" src="/app/img/srv/'+value+'.png" />'+
+										 '</div>';
+							counter++;
+							$("#serversList").append(newSrv);
+						}
 					}
 					
 					(function () {
