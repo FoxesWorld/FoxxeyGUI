@@ -6,6 +6,7 @@
 		<script src="/js/bootstrap.js"></script>
 		<script src="/js/vue.js"></script>
 		<script src="/js/request.class.js"></script>
+		<script src="/js/formUtils.js"></script>
 		<script src="/js/jquery.js"></script>
 		<script src="/js/notify.min.js"></script>
 		<script src="https://vk.com/js/api/openapi.js?168"></script>
@@ -21,7 +22,7 @@
 
 <div class="jab">
 	<span id="pagesAvialable"></span>
-	<button onclick="loadPage()">Load selected</button>
+	<button onclick="loadPage()" class="butt">Load selected</button>
 </div>
 			<body>
 				<div class="container-xl animate__animated" id="mainCont">
@@ -54,10 +55,12 @@
 					}
 				
 					function loadPage() {
+						
 						let tplSel = $('input[name*="tplSel"]:checked').val();
 						addAnimation('animate__backOutRight', $('#mainCont'));
 						setTimeout(() => {
 							app.content = request.sendGet('pages/'+tplSel);
+							formInit();
 						}, 1000);
 						setTimeout(() => {
 							addAnimation('animate__bounceInDown', $('#mainCont'));

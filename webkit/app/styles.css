@@ -74,6 +74,7 @@ h1 {
 h3 {
 	font-size: 13pt;
 	font-family: 'FSElliotPro-Bold';
+	margin: 0;
 }
 
 .status {
@@ -81,6 +82,25 @@ h3 {
 	font-size: 8pt;
 }
 
+.butt {
+	font-family: 'FSElliotPro-Heavy';
+	width: auto;
+	background-color: #abca4e;
+	border-radius: 4px;
+	font-size: 23px;
+	color: #ffffff;
+	height: 70px;
+	border: 0;
+}
+
+.butt:hover {
+	background-color: #b8d74f;
+}
+		
+.butt:active {
+	opacity: 0.5;
+}
+		
 .loadedPage {
 	min-width: 420px;
 	font-family: 'FSElliotPro';
@@ -109,23 +129,11 @@ td {
 			
 		}
 
-		.auth > .authBtn {
-			font-family: 'FSElliotPro-Heavy';
-			background-color: #abca4e;
-			border-radius: 4px;
+		.auth > form > .authBtn {
 			font-size: 23px;
 			color: #ffffff;
 			width: 100%;
 			height: 70px;
-			border: 0;
-		}
-		
-		.auth > .authBtn:hover {
-			background-color: #b8d74f;
-		}
-		
-		.auth > .authBtn:active {
-			opacity: 0.5;
 		}
 
 		.auth > .authMrg {
@@ -154,6 +162,46 @@ td {
 
 /* servers */
 
+		.serverBox {
+			padding: 0;
+		}
+
+		.serverBox > .uiBox {
+			width: fit-content;
+			min-height: 250px;
+			background-color: aliceblue;
+			padding: 10px;
+		}
+		
+		.serverBox > .uiBox > li > .uiInfo > .greeting {
+			font-size: 8pt;
+		}
+		
+		.serverBox > .uiBox > li:first-child {
+			display: contents;
+		}
+		
+		.serverBox > .uiBox > li:last-child {
+			display: flow-root;
+		}
+		
+		.serverBox > .uiBox > li > .userPhoto {
+			width: 128px;
+			float: left;
+			border-radius: 50%;
+			border: 2px solid #d1b9b9;
+		}
+
+		.serverBox > .uiBox > li > .uiInfo {
+		    margin: 10px;
+		}
+		
+		.serverBox > .uiBox > li > .uiInfo > .balanceBox {
+			background-color: #765f51;
+			height: 20px;
+			border-radius: 10%;
+		}
+		/*
 		.serverBox > table > tbody > tr > td > .jab > .srvInfoList {
 			list-style: none;
 			margin: 0;
@@ -204,7 +252,7 @@ td {
 			font-size: 22px;
 			font-family: 'FSElliotPro-Bold';
 			margin: 10px 0;
-		}
+		} */
 
 /* servers */
 
@@ -219,28 +267,33 @@ td {
 			font-size: 14pt;
 		}
 
-		.optBox > table > tbody > tr > td:first-child {
+		.optBox > form > table > tbody > tr > td:first-child {
 			display: contents;
 		}
 
-		.optBox > table > tbody > tr {
+		.optBox > form > table > tbody > tr {
 			margin: 15px;
 			display: table;
 		}
 		
-		.optBox > table > tbody > tr > td > .cbox > label {
+		.optBox > form > table > tbody > tr > td > .cbox > label {
 			font-size: 22pt;
 		}
 
-		.optBox > table > tbody > tr > td > .optTit {
+		.optBox > form > table > tbody > tr > td > .optTit {
 			font-family: 'FSElliotPro-Bold';
 			margin: 5px 0;
 		}
 
-		.optBox > table > tbody > tr > td > .optTit > span {
+		.optBox > form >  table > tbody > tr > td > .optTit > span {
 			font-family: 'FSElliotPro';
 			font-size: 9pt;
 			display: block;
+		}
+		
+		.optBox > form > .settingsButt {
+			width: auto;
+			height: 55px;
 		}
 
 /* Options */

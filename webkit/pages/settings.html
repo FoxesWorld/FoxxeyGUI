@@ -2,61 +2,65 @@
 
 	<h3>Настройки</h3>
 
-	<table>
-		<tr>
-			<td>
-				<div class="cbox">
-					<label for="check01">
-						<input type="checkbox" id="check01"/>
-						<span class="items"></span>
-					</label>  
-				</div>
-			</td>
+	<form method="POST" action="/" id="settingsForm">
+				<table>
+					<tr>
+						<td>
+							<div class="cbox">
+								<label for="discordRPC">
+									<input type="checkbox" id="discordRPC"/>
+									<span class="items"></span>
+								</label>  
+							</div>
+						</td>
 
-			<td>
-					<div class="optTit">
-						Игровая активность в Discord
-						<span>Включает Discord RPC</span>
-					</div>
-			</td>
-		</tr>
+						<td>
+								<div class="optTit">
+									Игровая активность в Discord
+									<span>Включает Discord RPC</span>
+								</div>
+						</td>
+					</tr>
 
-		<tr>
-			<td>
-				<div class="cbox">
-					<label for="check02">
-						<input type="checkbox" id="check02"/>
-						<span class="items"></span>
-					</label>  
-				</div>
-			</td>
+					<tr>
+						<td>
+							<div class="cbox">
+								<label for="fullscreen">
+									<input type="checkbox" id="fullscreen"/>
+									<span class="items"></span>
+								</label>  
+							</div>
+						</td>
 
-			<td>
-					<div class="optTit">
-						Полноэкранный режим
-						<span>Запускает игру в полном экране</span>
-					</div>
-			</td>
-		</tr>
+						<td>
+								<div class="optTit">
+									Полноэкранный режим
+									<span>Запускает игру в полном экране</span>
+								</div>
+						</td>
+					</tr>
 
-		<tr>
-			<td>
-				<div class="cbox">
-					<label for="check03">
-						<input type="checkbox" id="check03"/>
-						<span class="items"></span>
-					</label>  
-				</div>
-			</td>
+					<tr>
+						<td>
+							<div class="cbox">
+								<label for="jline">
+									<input type="checkbox" id="jline"/>
+									<span class="items"></span>
+								</label>  
+							</div>
+						</td>
 
-			<td>
-					<div class="optTit">
-						Режим отладки
-						<span>Запускает консоль для отладки работы лаунчера</span>
-					</div>
-			</td>
-		</tr>
-	</table>
+						<td>
+								<div class="optTit">
+									Режим отладки
+									<span>Запускает консоль для отладки работы лаунчера</span>
+								</div>
+						</td>
+					</tr>
+				</table>
+				
+				<button class="settingsButt butt">Сохранить</button>
+	</form>
 
 	</div>
 </div>
