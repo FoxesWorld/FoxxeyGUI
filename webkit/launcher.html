@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<script src="/js/bootstrap.js"></script>
-		<script src="/js/vue.js"></script>
+		<script src="/js/vue.min.js"></script>
 		<script src="/js/request.class.js"></script>
 		<script src="/js/formUtils.js"></script>
 		<script src="/js/jquery.js"></script>
@@ -16,8 +16,13 @@
 		<link href="/app/font-awesome.css" rel="stylesheet">
 		<link href="/app/input.css"   rel="stylesheet">
 		<link href="/app/animate.css" rel="stylesheet">
-		<link rel="shortcut icon" href="/favicon.ico">
-		<script type="text/javascript">VK.Widgets.Group("vkGrp", {mode: 4, width: "min-content", height: "500", color1: '573f26', color2: 'dce5f4', color3: '12669F'}, 168368623);</script>
+		<link rel="shortcut icon" href="/app/img/favicon.ico">
+		<script type="text/javascript">
+		let vkBlock = "vkGrp";
+		if($("#"+vkBlock).length > 0) {
+			VK.Widgets.Group(vkBlock, {mode: 4, width: "min-content", height: "500", color1: '573f26', color2: 'dce5f4', color3: '12669F'}, 168368623);
+		}
+		</script>
 	</head>
 
 <div class="jab">
@@ -42,6 +47,7 @@
 
 					mounted() {
 						console.log('Foxxey launcher started!');
+						formInit();
 					}
 				  });
 				</script>
@@ -55,7 +61,6 @@
 					}
 				
 					function loadPage() {
-						
 						let tplSel = $('input[name*="tplSel"]:checked').val();
 						addAnimation('animate__backOutRight', $('#mainCont'));
 						setTimeout(() => {

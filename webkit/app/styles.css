@@ -100,13 +100,20 @@ h3 {
 .butt:active {
 	opacity: 0.5;
 }
+
+.shadow {
+	-webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+	-moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+	box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+}
 		
 .loadedPage {
 	min-width: 420px;
 	font-family: 'FSElliotPro';
 	background-color: #eadcc97a;
     border-radius: 5px;
-	border: 1px solid brown;
+    padding: 15px;
+	/* border: 1px solid brown; */
 }
 
 td {
@@ -165,94 +172,87 @@ td {
 		.serverBox {
 			padding: 0;
 		}
+		
+		.serverBox > table > tbody > tr > td {
+			vertical-align: top;
+			padding: 0px 15px 0px 0px;
+			text-align: start;
+		}
 
-		.serverBox > .uiBox {
-			width: fit-content;
-			min-height: 250px;
+		.serverBox > table > tbody > tr > td > .uiBox {
+			max-width: 260px;
+			min-height: 450px;
 			background-color: aliceblue;
 			padding: 10px;
+			margin: 0px;
 		}
 		
-		.serverBox > .uiBox > li > .uiInfo > .greeting {
+		.serverBox > table > tbody > tr > td > .uiBox > li {
+			list-style: none;
+		}
+		
+		.serverBox > table > tbody > tr > td > .uiBox > .loginDetails {
+			float: right;
+		}
+		
+		.serverBox > table > tbody > tr > td > .uiBox > li > .loginDetails > .greeting {
 			font-size: 8pt;
 		}
 		
-		.serverBox > .uiBox > li:first-child {
-			display: contents;
+		.serverBox > table > tbody > tr > td > .uiBox > li:first-child {
+			display: inline-table;
 		}
 		
-		.serverBox > .uiBox > li:last-child {
+		.serverBox > table > tbody > tr > td > .uiBox > li:last-child {
 			display: flow-root;
 		}
 		
-		.serverBox > .uiBox > li > .userPhoto {
+		.serverBox > table > tbody > tr > td > .uiBox > li > .userPhoto {
 			width: 128px;
 			float: left;
-			border-radius: 50%;
+			border-radius: 0% 50% 50%;
 			border: 2px solid #d1b9b9;
 		}
 
-		.serverBox > .uiBox > li > .uiInfo {
-		    margin: 10px;
+		.serverBox > table > tbody > tr > td > .uiBox > li > .uiInfo {
+			margin: 10px 10px 0px;
+			width: fit-content;
+			z-index: 10;
 		}
 		
-		.serverBox > .uiBox > li > .uiInfo > .balanceBox {
+		.serverBox > table > tbody > tr > td > .uiBox > li > .uiInfo > .balanceBox {
+			font-size: 10pt;
 			background-color: #765f51;
-			height: 20px;
+			height: fit-content;
+			width: fit-content;
+			padding: 5px;
 			border-radius: 10%;
+			display: list-item;
 		}
-		/*
-		.serverBox > table > tbody > tr > td > .jab > .srvInfoList {
-			list-style: none;
-			margin: 0;
-			display: inline-table;
+		
+		.serverBox > table > tbody > tr > td > .uiBox > li > .uiInfo > .balanceBox > b {
+			font-family: 'FSElliotPro-Heavy';
+			color: #ba7739;
+			text-shadow: 0 0 16px rgb(219 114 40 / 90%);
 		}
-
-		.serverBox > table > tbody > tr > td > .jab  > .srvImg {
-			width: inherit;
-			height: auto;
+		
+		.serverBox > table > tbody > tr > td > .uiBox > .userMenu {
+		    width: fit-content;
+			height: fit-content;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			margin: 20% auto;
 		}
-
-		.serverBox > table > tbody > tr > td > .jab  > .srvDesc {
-			display: block;
-			width: 100%;
-			height: auto;
+		
+		.serverBox > table > tbody > tr > td > .uiBox > .userMenu > button {
 			margin: 5px;
-			font-family: 'FSElliotPro-Bold';
+			width: 110px;
+			height: 35px;
 		}
-
-		.serverBox > table > tbody > tr > td > .srvSel {
-			min-height: 64px;
+		
+		.serverBox > table > tbody > tr > .contentBox {
+			background-color: aliceblue;
 		}
-
-		.serverBox > table > tbody > tr > td > .srvSel > div {
-			margin: 5px;
-			width: 128px;
-			text-align: center;
-			background-color: #dbd8cfcc;
-			border-radius: 10px;
-			height: 128px;
-			display: inline-block;
-		}
-
-		.serverBox > table > tbody > tr > td > .srvSel > div:hover {
-			opacity: 0.75;
-			transition: 0.50s ease-in-out;
-			transform: translateY(-5px);
-			background-color: #c5bca3cc;
-			box-shadow: -3.1px 5.1px 22px rgb(0 0 0 / 83%);
-		}
-
-		.srvSel > .srvBox > .srvbImg {
-			height: 64px;
-			width: auto;
-		}
-
-		.srvSel > .srvBox > h4 {
-			font-size: 22px;
-			font-family: 'FSElliotPro-Bold';
-			margin: 10px 0;
-		} */
 
 /* servers */
 

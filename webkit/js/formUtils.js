@@ -1,4 +1,4 @@
-		
+	
 		function formInit() {
 			setTimeout(() => {
 				let forms = document.querySelectorAll("form");
