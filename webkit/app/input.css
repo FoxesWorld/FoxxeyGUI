@@ -1,7 +1,5 @@
-		select,
-		input,
-		textarea,
-		button {
+		/* INPUT BLOCK */
+		select,	input, textarea, button {
 			outline: none;
 		}
 
@@ -95,9 +93,8 @@
 
 		.auth button:hover:before {
 			opacity: 1;
-		} */
-		
-		/* OPTION SELECT*/
+		} 
+
 		.option_select {
 			background: #eae6d6;
 			font-family: montserrat, sans-serif;
@@ -204,8 +201,9 @@
 		.option_select_text:focus~.option_select_bar:before,
 		.option_select_text:focus~.option_select_bar:after {
 			width: 50%;
-		}
+		}*/
 		
+		/* CHECKBOX */
 		.cbox label{
 		  font-size:21px;
 		  color:#666;
@@ -315,4 +313,71 @@
 			-o-transform:scale(1);
 			transform:scale(1);
 		  }
+		}
+		
+		/* INPUT SELECT */
+		.select{
+			position: relative;
+			height: 45px;
+			line-height: 3;
+			box-shadow: none;
+			border: 0 !important;
+			background: #4f3d46;
+			color: #ffce6f;
+			font-family: 'FSElliotPro-Heavy';
+			border-radius: .25em;
+		}
+
+		.select::after {
+		  content: '\25BC';
+		  position: absolute;
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+		  padding: 0 1em;
+		  background: #694f5c;
+		  color: white;
+		  pointer-events: none;
+		}
+			
+		.select-active::after {
+			content: '\25B2';
+		}
+				
+		.selected{
+			width: 100%;
+			height: 100%;
+			margin: 0px 15px 0px;
+			cursor: pointer;
+		}
+
+		.option-list{
+			display: none;
+			position: absolute;
+			bottom: 100%;
+			left: -1px;
+			width: 100%;
+			border-radius: 5px 5px 0px 0px;
+			background: #362d32;
+			z-index: 2;
+		}
+		
+		.option-list:active {
+			display: grid;
+		}
+		
+		.option{
+			width: 96%;
+			cursor: pointer;
+			height: 45px;
+			background-color: #443940;
+			color: #ffffff;
+			margin: 5px auto;
+			border-radius: 5px;
+			display: inline-table;
+		}
+		.option:hover{
+			background: #4f3d46;
+			color: #ffce6f;
+			transition: 0.5s;
 		}
