@@ -338,6 +338,7 @@
 		  background: #694f5c;
 		  color: white;
 		  pointer-events: none;
+		  border-radius: 0px 0.25em 0.25em 0px;
 		}
 			
 		.select-active::after {
@@ -369,10 +370,9 @@
 		.option{
 			width: 96%;
 			cursor: pointer;
-			height: 45px;
 			background-color: #443940;
 			color: #ffffff;
-			margin: 5px auto;
+			margin: 3px auto 5px;
 			border-radius: 5px;
 			display: inline-table;
 		}

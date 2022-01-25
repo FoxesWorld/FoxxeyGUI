@@ -1,6 +1,14 @@
 	(function () {
 		request = new request('', {key:"secureKey"}, 'false');
 	 }());
+	 
+	 function appendCss() {
+		 let css = JSON.parse(getHTMLcontent('app/css'));
+		 console.log("Adding "+ css.length + " App/CSS files");
+		 for (var value of css) {
+			 $('head').append('<link href="/app/css/'+ value + '" rel="stylesheet">');
+		 }
+	 }
 
 	function addAnimation(animation, block) {
 			block.addClass(animation);
@@ -12,33 +20,32 @@
 	function loadPage(page) {
 		addAnimation('animate__backOutRight', $('#mainCont'));
 		setTimeout(() => {
-			app.content = request.sendGet('pages/'+page);
+			app.content = getHTMLcontent('pages/'+page);
 				formInit();
 				selListFunc();
 		}, 1000);
 		setTimeout(() => {
 			addAnimation('animate__bounceInDown', $('#mainCont'));
 		}, 1000);
-		
-
+	}
+	
+	function getHTMLcontent(file) {
+		let content = request.sendGet(file); 
+		return content;
 	}
 					
 	function serversLoad() {
-		let servers = ['HardTech', 'FoxesWorld'];
-		let counter = 0;
+		console.log('Loading '+ servers.length + ' servers');
 		for (var value of servers) {
-			let newSrv = '<div id="srv-'+counter+'" class="srvBox animate__animated" onclick="addAnimation(\'animate__tada\', $(this))">' +
-							'<h4 id="title-'+counter+'">'+ value +'</h4>'+
-							'<img class="srvbImg" src="/app/img/srv/'+value+'.png" />'+
-						 '</div>';
-			counter++;
-			$("#serversList").append(newSrv);
+			let newSrv = '<div class="option" data-select-val="'+ value +'">'+ value +'</div>';
+			$("#srvList").append(newSrv);
 		}
 	}
 	
-	function selListFunc(){
+	function selListFunc() {
 		setTimeout(() => {
 			if($(".select").length > 0) {
+				serversLoad();
 				console.log("SelectList listener enabled");
 				let optList = ".option-list";
 				$('.selected').click(function(){

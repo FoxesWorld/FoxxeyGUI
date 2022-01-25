@@ -50,7 +50,7 @@ function request(path, args, timeDelay) {
 		var xmlHttp = new XMLHttpRequest();
 		xmlHttp.open("GET", theUrl, false); // false for synchronous request
 		xmlHttp.send(null);
-		return xmlHttp.responseText;
+		return xmlHttp.responseText.replace(/(\r\n|\n|\r|\t)/gm, "");
 	};
 	
 	this.upload = function( file, params, progress, load){

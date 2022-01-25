@@ -1,71 +1,60 @@
-<head>
-			<script defer>
-				$(function(){
-					$('.selected').click(function(){
-						$('.option-list').slideToggle(200);
-						$('.select').toggleClass('select-active');
-					});
-					$('.option').click(function(){
-						select_val = $(this).attr('data-select-val');
-						select_div = $(this).parent().parent();
-						$(select_div).children('.selected').html($(this).html());
-						$(select_div).children('input').val(select_val);
-						$('.option-list').slideToggle(200);
-						$('.select').toggleClass('select-active');
-					});
-				});
-			</script>
-</head>
-<div class="container-md serverBox"> 
 
-	<table>
-		<td>
-			<ul class="uiBox contentBox">
+	<div class="container-md serverBox"> 
 
-				<li>
-					<img src="//foxesworld.ru/uploads/fotos/foto_83.png" class="userPhoto">
-					<div class="uiInfo">
-						<span class="balanceBox">Units: <b id="userBalance">100500</b></span>
+		<table>
+			<td>
+				<ul class="uiBox contentBox">
+
+					<li>
+						<img src="//foxesworld.ru/uploads/fotos/foto_83.png" class="userPhoto">
+						<div class="uiInfo">
+							<span class="balanceBox">Units: <b id="userBalance">100500</b></span>
+						</div>
+					</li>
+					
+					<li class="loginDetails">
+						<h3 class="userLogin">AidenFox</h3>
+						<span class="greeting">Welcome back!</span>
+					</li>
+					
+					<div class="userMenu">
+					  <button>GG</button><button>WP</button>
+					  <button>Let</button>  <button>Me</button>
+					  <button>Try</button> <button>Another</button>
+					  <button>Time</button> <button>LogOut</button>
 					</div>
-				</li>
-				
-				<li class="loginDetails">
-					<h3 class="userLogin">AidenFox</h3>
-					<span class="greeting">Welcome back!</span>
-				</li>
-				
-				<div class="userMenu">
-				  <button>GG</button><button>WP</button>
-				  <button>Let</button>  <button>Me</button>
-				  <button>Try</button> <button>Another</button>
-				  <button>Time</button> <button>LogOut</button>
-				</div>
 
-				<div class="select">
-					<input type="hidden" name="item" value="1" />
-					<div class="selected">HardTech</div>
-					<div class="option-list">
-						<div class="option" data-select-val="1">HardTech</div>
-						<div class="option" data-select-val="2">Classic</div>
-						<div class="option" data-select-val="3">FoxesWorld</div>
-					</div>
-				</div>
+					<div class="select">
+						<input type="hidden" name="item" value="" />
+						<div class="selected"></div>
+						<div class="option-list" id="srvList">
 
-					<div class="uiActionBtns">
-						<button>Settings</button>
-						<button>Optional Mods</button>
+						</div>
 					</div>
-			</ul>
-		</td>
-	
-		<td class="container-fluid contentBox">
+
+						<div class="uiActionBtns">
+							<button onclick="Avgrund.show('#settings');">Settings</button>
+							<button>Optional Mods</button>
+						</div>
+				</ul>
+			</td>
 		
-			<div>
-				GGWP even better!!!!!
-			</div>
-		
-		</td>
-	</table>
+			<td class="container-fluid contentBox">
+			
+				<div>
+					GGWP even better!!!!!
+				</div>
+			
+			</td>
+		</table>
 
+		<aside id="settings" class="avgrund-popup">
+			<button class="closeButt" onclick="Avgrund.hide();"><i class="fa fa-times" aria-hidden="true"></i></button>
+			<h2>Теперь на Русском!</h2>
+			<p>
+				Выйти отсюда можно нажав на ESC
+			</p>
 
-</div>
+			<button class="butt" onclick="Avgrund.hide();"">Close</button>
+		</aside>
+	</div>

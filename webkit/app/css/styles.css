@@ -1,21 +1,21 @@
 @font-face {
 	font-family: 'Roboto-Black';
-	src: url('fonts/Roboto-Black.ttf') format('truetype');
+	src: url('../fonts/Roboto-Black.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'FSElliotPro';
-	src: url('fonts/FSElliotPro.eot');
-	src: url('fonts/FSElliotPro.woff2') format('woff2'), url('fonts/FSElliotPro.woff') format('woff'), url('fonts/FSElliotPro.ttf') format('truetype'), url('fonts/FSElliotPro.svg#FSElliotPro') format('svg'), url('fonts/FSElliotPro.eot?#iefix') format('embedded-opentype');
+	src: url('../fonts/FSElliotPro.eot');
+	src: url('../fonts/FSElliotPro.woff2') format('woff2'), url('../fonts/FSElliotPro.woff') format('woff'), url('../fonts/FSElliotPro.ttf') format('truetype'), url('../fonts/FSElliotPro.svg#FSElliotPro') format('svg'), url('../fonts/FSElliotPro.eot?#iefix') format('embedded-opentype');
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'FSElliotPro-Bold';
-	src: url('fonts/FSElliotPro-Bold.eot');
-	src: url('fonts/FSElliotPro-Bold.ttf') format('truetype'), url('fonts/FSElliotPro-Bold.svg#FSElliotPro-Bold') format('svg'), url('fonts/FSElliotPro-Bold.eot?#iefix') format('embedded-opentype');
+	src: url('../fonts/FSElliotPro-Bold.eot');
+	src: url('../fonts/FSElliotPro-Bold.ttf') format('truetype'), url('../fonts/FSElliotPro-Bold.svg#FSElliotPro-Bold') format('svg'), url('../fonts/FSElliotPro-Bold.eot?#iefix') format('embedded-opentype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,23 +23,23 @@
 
 @font-face {
 	font-family: 'FSElliotPro-Heavy';
-	src: url('fonts/FSElliotPro-Heavy.eot');
-	src: url('fonts/FSElliotPro-Heavy.ttf') format('truetype'), url('fonts/FSElliotPro-Heavy.svg#FSElliotPro-Heavy') format('svg'), url('fonts/FSElliotPro-Heavy.eot?#iefix') format('embedded-opentype');
+	src: url('../fonts/FSElliotPro-Heavy.eot');
+	src: url('../fonts/FSElliotPro-Heavy.ttf') format('truetype'), url('../fonts/FSElliotPro-Heavy.svg#FSElliotPro-Heavy') format('svg'), url('../fonts/FSElliotPro-Heavy.eot?#iefix') format('embedded-opentype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'FuturaMediumC';
-	src: url('fonts/FuturaMediumC.eot');
-	src: url('fonts/FuturaMediumC.woff2') format('woff2'), url('fonts/FuturaMediumC.woff') format('woff'), url('fonts/FuturaMediumC.ttf') format('truetype'), url('fonts/FuturaMediumC.svg#FuturaMediumC') format('svg'), url('fonts/FuturaMediumC.eot?#iefix') format('embedded-opentype');
+	src: url('../fonts/FuturaMediumC.eot');
+	src: url('../fonts/FuturaMediumC.woff2') format('woff2'), url('../fonts/FuturaMediumC.woff') format('woff'), url('../fonts/FuturaMediumC.ttf') format('truetype'), url('../fonts/FuturaMediumC.svg#FuturaMediumC') format('svg'), url('../fonts/FuturaMediumC.eot?#iefix') format('embedded-opentype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Minecraft';
-	src: url('fonts/minecraft.ttf') format('truetype');
+	src: url('../fonts/minecraft.ttf') format('truetype');
 	font-style: normal;
 }
 
@@ -231,6 +231,7 @@ td {
 		.serverBox > table > tbody > tr > td > .uiBox > li > .userPhoto {
 			width: 128px;
 			float: left;
+			margin: 0px 5px;
 			border-radius: 0% 50% 50%;
 			border: 2px solid #d1b9b9;
 		}
@@ -293,6 +294,8 @@ td {
 		.serverBox > table > tbody > tr > td > .uiBox > .userMenu > button:last-child:hover {
 			background: #c74e54;
 			color: white;
+			animation: shakeAlert 1s;
+			animation-iteration-count: infinite;
 		}
 		
 		.serverBox > table > tbody > tr > td > .uiBox > .userMenu > button:last-child:hover::after {
@@ -411,19 +414,108 @@ td {
 
 /* Just A Box Ended */
 
-/* Temp */
-#main-sidebar {
-	left: 0;
-    top: 0;
-	float: left;
-	width: 23%;
-	height: 100%;
-	position: fixed;
-	background-color: #495054;
-	color: white;
+/* Modal */
+.mdlContent {
+    margin: 40px 0px 0px 0px;
 }
 
-.blockHeader {
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPcAAAA8CAYAAAC6oywkAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNmlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjarY6xSsNQFEDPi6LiUCsEcXB4kygotupgxqQtRRCs1SHJ1qShSmkSXl7VfoSjWwcXd7/AyVFwUPwC/0Bx6uAQIYODCJ7p3MPlcsGo2HWnYZRhEGvVbjrS9Xw5+8QMUwDQCbPUbrUOAOIkjvjB5ysC4HnTrjsN/sZ8mCoNTIDtbpSFICpA/0KnGsQYMIN+qkHcAaY6addAPAClXu4vQCnI/Q0oKdfzQXwAZs/1fDDmADPIfQUwdXSpAWpJOlJnvVMtq5ZlSbubBJE8HmU6GmRyPw4TlSaqo6MukP8HwGK+2G46cq1qWXvr/DOu58vc3o8QgFh6LFpBOFTn3yqMnd/n4sZ4GQ5vYXpStN0ruNmAheuirVahvAX34y/Axk/96FpPYgAAACBjSFJNAAB6JQAAgIMAAPn/AACA6AAAUggAARVYAAA6lwAAF2/XWh+QAAAB/ElEQVR42uzbsU7jQBQF0JnECJaNkJD4EqigXL572+34FSQaSESIqShIseu82LOZ8TkdEpfEz74xlvLyr9v7mxSzCebeg7mzYO48mLsI5l7MZZZzWRaeyz+Pb5GAJnU/V6uDQ33fp5yznJzcCee6zWad+t1u8B/OOaePj11adks5ObkTznUp8umRU5KTkzvtnGduaJRyg3IDyg0oN6DcgHIDyg3KDdQk930fCj7ePXTB17wK5n4Ec2/B3DaYezWX8eby++nPtuT1ecTrXUc7GHyfz+7cMFPRu28ask22v71iW8dcDp1L6etzytcbc56Tlnv99vf/sr62VxaL/O3n1rd1vo7XXMaZS+nrM6r0duWk5R70iZP3fm8G2zrmMvJcSl+fUQPm0u+/xDHnYQDP3NAo5QblBpQbUG5AuQHlBpQblBuoST7m+7QlHbGFFhLdDvoPx3cZzEW316LbVmt1G++8D7k+3bmhUV0tb3TKLbQxt4NqOb7SOcY9702VO7rlU3obqZbjK51j3PPeVLmjWz7Ft4MqOb7W59n6dT2EZ25olHKDcgPKDSg3oNyAcgPKDcoN1CT73m/dWt+Ww50b2NMZQd1a35ZDuWer9W05lHu2bHfhmRuUG1BuQLkB5QaUG1BuUG5AuYGTZSsM3LkB5QaUG5jGJwAAAP//AwDL+Br/xTvQBQAAAABJRU5ErkJggg==);
-	background-repeat: repeat-x;
+.mdlContent ul li span.windows {
+    background: #6c5245 url({THEME}/img/windows.png) 50% 42px no-repeat;
+}
+
+.mdlContent ul li span.linux {
+    background: #6c5245 url({THEME}/img/linux.png) 50% 42px no-repeat;
+}
+
+.mdlContent ul li span {
+    width: 282px;
+    height: 189px;
+    display: block;
+    overflow: hidden;
+    font-size: 16px;
+    color: #302c26;
+    font-family: FSElliotPro-Bold;
+    line-height: 270px;
+}
+
+.mdlContent ul li {
+    width: 282px;
+    height: 273px;
+    background-color: #6c5245;
+    -moz-box-shadow: 0 16px 27px rgba(124,122,120,.09);
+    -webkit-box-shadow: 0 16px 27px rgb(124 122 120 / 9%);
+    box-shadow: 0 16px 27px rgb(124 122 120 / 9%);
+    display: inline-block;
+    margin: 0 17px;
+}
+
+.mdlContent a.download {
+    width: 103px;
+    height: 50px;
+    background: #705e49 url({THEME}/img/icons/download.png) 22px 13px no-repeat;
+    color: #fff;
+    text-decoration: none;
+    transition: all .5s ease;
+    font-size: 18px;
+    display: block;
+    text-align: left;
+    line-height: 45px;
+    margin: -20px auto 13px auto;
+    padding: 0 0 0 60px;
+    font-family: FSElliotPro-Bold;
+    box-shadow: 0 11px 27px rgb(55 49 42 / 22%), inset 0 -2px 0 #2f2b23;
+}
+
+.mdlContent a.download:hover {
+    background: #fc9c17 url({THEME}/img/icons/download_hover.png) 22px 13px no-repeat;
+    color: #fff;
+    box-shadow: 0 11px 27px rgb(234 138 6 / 22%), inset 0 -2px 0 #dd850c;
+    text-shadow: 2px 4px 4px rgb(189 93 2 / 65%);
+}
+
+/* KeyFrames */
+@keyframes shakeAlert {
+    0% {
+        transform: translate(1px,1px) rotate(0)
+    }
+
+    10% {
+        transform: translate(-1px,-2px) rotate(-1deg)
+    }
+
+    20% {
+        transform: translate(-3px,0) rotate(1deg)
+    }
+
+    30% {
+        transform: translate(3px,2px) rotate(0)
+    }
+
+    40% {
+        transform: translate(1px,-1px) rotate(1deg)
+    }
+
+    50% {
+        transform: translate(-1px,2px) rotate(-1deg)
+    }
+
+    60% {
+        transform: translate(-3px,1px) rotate(0)
+    }
+
+    70% {
+        transform: translate(3px,1px) rotate(-1deg)
+    }
+
+    80% {
+        transform: translate(-1px,-1px) rotate(1deg)
+    }
+
+    90% {
+        transform: translate(1px,2px) rotate(0)
+    }
+
+    100% {
+        transform: translate(1px,-2px) rotate(-1deg)
+    }
 }
