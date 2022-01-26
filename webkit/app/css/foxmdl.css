@@ -92,15 +92,11 @@
 }
 
 aside > .foxMdlMain {
-	padding: 30px;
-}
-
-aside > .foxMdlMain > header {
-	font-family: 'FSElliotPro-Heavy';
+	padding: 0px 30px 0px 0px;
 }
 
 aside > .foxMdlMain > content {
-	height: 84%;
+	height: fit-content;
     display: block;
 }
 
