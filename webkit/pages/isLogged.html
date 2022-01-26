@@ -33,7 +33,7 @@
 					</div>
 
 						<div class="uiActionBtns">
-							<button onclick="Avgrund.show('#settings');">Settings</button>
+							<button onclick="FoxMdl.show('#settings');">Settings</button>
 							<button>Optional Mods</button>
 						</div>
 				</ul>
@@ -48,13 +48,21 @@
 			</td>
 		</table>
 
-		<aside id="settings" class="avgrund-popup">
-			<button class="closeButt" onclick="Avgrund.hide();"><i class="fa fa-times" aria-hidden="true"></i></button>
-			<h2>Теперь на Русском!</h2>
-			<p>
-				Выйти отсюда можно нажав на ESC
-			</p>
+		<aside id="settings" class="foxmdl-popup" tabindex="-1">
+			<i class="fa fa-times closeButt" onclick="FoxMdl.hide();" aria-hidden="true"></i>
+			<main class="foxMdlMain">
+				<header>
+					<h2>Теперь на Русском!</h2>
+				</header>
+				
+				<content onload="$('content').html(getHTMLcontent('modal/settings.html'));">
+				
+				</content>
+				
+				<footer>
+					<!-- <button class="butt" onclick="FoxMdl.hide();">Close</button> -->
+				</footer>
+			</main>
 
-			<button class="butt" onclick="Avgrund.hide();"">Close</button>
 		</aside>
 	</div>

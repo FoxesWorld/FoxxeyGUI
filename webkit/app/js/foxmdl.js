@@ -1,18 +1,12 @@
-/*!
- * avgrund 0.1
- * http://lab.hakim.se/avgrund
- * MIT licensed
- *
- * Copyright (C) 2018 Hakim El Hattab, http://hakim.se
- */
-var Avgrund = (function(){
+
+var FoxMdl = (function(){
 
 	var container = document.documentElement,
-		popup = document.querySelector( '.avgrund-popup-animate' ),
-		cover = document.querySelector( '.avgrund-cover' ),
+		popup = document.querySelector( '.foxmdl-popup-animate' ),
+		cover = document.querySelector( '.foxmdl-cover' ),
 		currentState = null;
 
-	container.classList.add( 'avgrund-ready' );
+	container.classList.add( 'foxmdl-ready' );
 
 	// Deactivate on ESC
 	function onDocumentKeyUp( event ) {
@@ -45,7 +39,7 @@ var Avgrund = (function(){
 
 		setTimeout( function() {
 			popup.classList.remove( 'no-transition' );
-			container.classList.add( 'avgrund-active' );
+			container.classList.add( 'foxmdl-active' );
 		}, 0 );
 
 		currentState = state;
@@ -58,8 +52,8 @@ var Avgrund = (function(){
 		document.removeEventListener( 'click', onDocumentClick, false );
 		document.removeEventListener( 'touchstart', onDocumentClick, false );
 
-		container.classList.remove( 'avgrund-active' );
-		popup.classList.remove( 'avgrund-popup-animate' );
+		container.classList.remove( 'foxmdl-active' );
+		popup.classList.remove( 'foxmdl-popup-animate' );
 
 	}
 
@@ -72,7 +66,7 @@ var Avgrund = (function(){
 	function show( selector ) {
 
 		popup = document.querySelector( selector );
-		popup.classList.add( 'avgrund-popup-animate' );
+		popup.classList.add( 'foxmdl-popup-animate' );
 		activate();
 		return this;
 

@@ -1,6 +1,14 @@
 	(function () {
 		request = new request('', {key:"secureKey"}, 'false');
 	 }());
+
+	 function appendJs() {
+		 let js = JSON.parse(getHTMLcontent('app/js'));
+		 console.log("Adding "+ js.length + " App/JS files");
+		 for (var value of js) {
+			 $('head').append('<script src="/app/js/'+ value + '"></script>');
+		 }
+	 }
 	 
 	 function appendCss() {
 		 let css = JSON.parse(getHTMLcontent('app/css'));

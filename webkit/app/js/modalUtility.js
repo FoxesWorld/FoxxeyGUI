@@ -1,40 +1,18 @@
-function initModal() {
-	let modal = new tingle.modal({
-		footer: true,
-		stickyFooter: false,
-		closeMethods: ['overlay', 'button', 'escape'],
-		closeLabel: "Закрыть",
-		cssClass: ['custom-class-1', 'custom-class-2'],
-		onOpen: function() {
-			console.log('modal is open');
-		},
-		onClose: function() {
-			console.log('modal closed');
-		},
-		beforeClose: function() {
-			// here's goes some logic
-			// e.g. save content before closing the modal
-			return true; // close the modal
-			return false; // nothing happens
-		}
-	});
+function appendModal(modal){
+	let baseContent = '<aside id="settings" class="foxmdl-popup" tabindex="-1">' +
+			'<i class="fa fa-times closeButt" onclick="FoxMdl.hide();" aria-hidden="true"></i>' +
+			'<main class="foxMdlMain">' +
+				'<header>' +
+					'<h2></h2>' +
+				'</header>' +
+				'<content>' +
+				'</content>' +
+				'<footer>' +
+					'<!-- <button class="butt" onclick="FoxMdl.hide();">Close</button> -->' +
+				'</footer>' +
+			'</main>' +
+		'</aside>';
+	let modalContent = new DOMParser().parseFromString(getHTMLcontent(modal), "text/xml");
 	
-	return modal;
+	return modalContent;
 }
-/*	// set content
-	modal.setContent('<h1>here\'s some content</h1>');
-
-	// add a button
-	modal.addFooterBtn('Button label', 'tingle-btn tingle-btn--primary', function() {
-		// here goes some logic
-		modal.close();
-	});
-
-	// add another button
-	modal.addFooterBtn('Dangerous action !', 'tingle-btn tingle-btn--danger', function() {
-		// here goes some logic
-		modal.close();
-	});
-	
-	
-} */
