@@ -26,9 +26,13 @@
 	}
 				
 	function loadPage(page) {
+		if(!isLogged){
+			page = 'auth.html';
+		}
 		addAnimation('animate__backOutRight', $('#mainCont'));
 		setTimeout(() => {
 			app.content = getHTMLcontent('pages/'+page);
+				checkAuthorisation();
 				formInit();
 				selListFunc();
 		}, 1000);
@@ -52,9 +56,11 @@
 	
 	function selListFunc() {
 		setTimeout(() => {
+			let selectedSrv = $("#selectedSrv").val();
 			if($(".select").length > 0) {
 				serversLoad();
 				console.log("SelectList listener enabled");
+				$(".selected").html(selectedSrv);
 				let optList = ".option-list";
 				$('.selected').click(function(){
 					$(optList).slideToggle(200);
@@ -62,6 +68,10 @@
 				if ($(optList).is(':visible')) {
 				   $(optList).css('display','grid');
 				}
+				});
+				
+				$(".option").hover(function(){
+					$("#srvInfo").html(($(this).attr('data-select-val') + " info got from backend!"));
 				});
 
 				$('.option').click(function(){
@@ -76,7 +86,7 @@
 			} else {
 				console.warn("No SelList element!");
 			}
-		}, 1000);
+		}, 500);
 	}
 	
 	/* DEVELOPMENT */
