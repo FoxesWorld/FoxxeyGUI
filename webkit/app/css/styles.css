@@ -285,7 +285,7 @@ td {
 		
 		.isLogged > table > tbody > tr > td > .uiBox > .userMenu > button::after {
 			font-family: 'FontAwesome';
-			content: "\f08b";
+			content: attr(icn);
 			color: #7d5e58;
 			float: right;
 		}

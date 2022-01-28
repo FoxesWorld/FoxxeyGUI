@@ -17,6 +17,12 @@
 			 $('head').append('<link href="/app/css/'+ value + '" rel="stylesheet">');
 		 }
 	 }
+	 
+	 function vkFill(){
+		if($("#"+vkBlock).length > 0) {
+			VK.Widgets.Group(vkBlock, {mode: 4, width: "min-content", height: "462", color1: '573f26', color2: 'dce5f4', color3: '12669F'}, 168368623);
+		}
+	 }
 
 	function addAnimation(animation, block) {
 			block.addClass(animation);
@@ -86,6 +92,7 @@
 			} else {
 				console.warn("No SelList element!");
 			}
+			vkFill();
 		}, 500);
 	}
 	
