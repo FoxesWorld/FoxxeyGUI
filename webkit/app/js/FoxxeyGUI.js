@@ -17,6 +17,12 @@
 			 $('head').append('<link href="/app/css/'+ value + '" rel="stylesheet">');
 		 }
 	 }
+	 
+	 function vkFill(){
+		if($("#"+vkBlock).length > 0) {
+			VK.Widgets.Group(vkBlock, {mode: 4, width: "min-content", height: "462", color1: '573f26', color2: 'dce5f4', color3: '12669F'}, 168368623);
+		}
+	 }
 
 	function addAnimation(animation, block) {
 			block.addClass(animation);
@@ -24,11 +30,22 @@
 				block.removeClass(animation);
 			 }, 1000);
 	}
+	
+	function progressBarFilling(progress){
+		
+		for (let ammount = 0; ammount <= 100; ammount++) {
+			$("#"+progress).css("width", ammount + "%");
+		}
+	}
 				
 	function loadPage(page) {
+		if(!isLogged){
+			page = 'auth.html';
+		}
 		addAnimation('animate__backOutRight', $('#mainCont'));
 		setTimeout(() => {
 			app.content = getHTMLcontent('pages/'+page);
+				checkAuthorisation();
 				formInit();
 				selListFunc();
 		}, 1000);
@@ -52,9 +69,11 @@
 	
 	function selListFunc() {
 		setTimeout(() => {
+			let selectedSrv = $("#selectedSrv").val();
 			if($(".select").length > 0) {
 				serversLoad();
 				console.log("SelectList listener enabled");
+				$(".selected").html(selectedSrv);
 				let optList = ".option-list";
 				$('.selected').click(function(){
 					$(optList).slideToggle(200);
@@ -62,6 +81,10 @@
 				if ($(optList).is(':visible')) {
 				   $(optList).css('display','grid');
 				}
+				});
+				
+				$(".option").hover(function(){
+					$("#srvInfo").html(($(this).attr('data-select-val') + " info got from backend!"));
 				});
 
 				$('.option').click(function(){
@@ -76,9 +99,10 @@
 			} else {
 				console.warn("No SelList element!");
 			}
-		}, 1000);
+			vkFill();
+		}, 500);
 	}
-	
+
 	/* DEVELOPMENT */
 	
 	function parsePages() {

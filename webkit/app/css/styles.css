@@ -182,53 +182,59 @@ td {
 		}
 /* Auth */
 
-/* servers */
+/* Is Logged */
 
-		.serverBox {
+		.isLogged {
 			padding: 0;
 		}
 		
-		.serverBox > table > tbody > tr > td {
+		.isLogged > table > tbody > tr > td {
 			vertical-align: top;
 			padding: 0px 15px 0px 0px;
 			text-align: start;
 		}
 
-		.serverBox > table > tbody > tr > td > .uiBox {
+		.isLogged > table > tbody > tr > td > .uiBox {
 			margin: 0px;
 		}
 		
-		.serverBox > table > tbody > tr > td:first-child {
+		
+		
+		.isLogged > table > tbody > tr > td:first-child {
 			border-radius: 5px;
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > li {
+		.isLogged > table > tbody > tr > td:last-child {
+			padding: 10px;
+		}
+		
+		.isLogged > table > tbody > tr > td > .uiBox > li {
 			list-style: none;
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > .loginDetails {
+		.isLogged > table > tbody > tr > td > .uiBox > .loginDetails {
 			float: right;
 			text-align: end;
 			margin: 30px 20% 0px 0px;
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > .loginDetails > .userLogin {
+		.isLogged > table > tbody > tr > td > .uiBox > .loginDetails > .userLogin {
 			font-size: 15pt;
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > .loginDetails > .greeting {
+		.isLogged > table > tbody > tr > td > .uiBox > .loginDetails > .greeting {
 			font-size: 8pt;
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > li:first-child {
+		.isLogged > table > tbody > tr > td > .uiBox > li:first-child {
 			display: inline-table;
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > li:last-child {
+		.isLogged > table > tbody > tr > td > .uiBox > li:last-child {
 			display: flow-root;
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > li > .userPhoto {
+		.isLogged > table > tbody > tr > td > .uiBox > li > .userPhoto {
 			width: 128px;
 			float: left;
 			margin: 0px 5px;
@@ -236,27 +242,28 @@ td {
 			border: 2px solid #d1b9b9;
 		}
 
-		.serverBox > table > tbody > tr > td > .uiBox > li > .uiInfo {
+		.isLogged > table > tbody > tr > td > .uiBox > li > .uiInfo {
 			margin: 10px 10px 0px;
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > li > .uiInfo > .balanceBox {
+		.isLogged > table > tbody > tr > td > .uiBox > li > .uiInfo > .balanceBox {
 			font-size: 10pt;
 			background-color: #765f51;
 			height: fit-content;
 			width: fit-content;
 			padding: 5px;
 			border-radius: 10%;
+			min-width: 100px;
 			display: list-item;
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > li > .uiInfo > .balanceBox > b {
+		.isLogged > table > tbody > tr > td > .uiBox > li > .uiInfo > .balanceBox > b {
 			font-family: 'FSElliotPro-Heavy';
 			color: #ba7739;
 			text-shadow: 0 0 16px rgb(219 114 40 / 90%);
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > .userMenu {
+		.isLogged > table > tbody > tr > td > .uiBox > .userMenu {
 		    width: fit-content;
 			height: fit-content;
 			display: grid;
@@ -264,7 +271,7 @@ td {
 			margin: 5% auto 5%;
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > .userMenu > button {
+		.isLogged > table > tbody > tr > td > .uiBox > .userMenu > button {
 			margin: 5px;
 			width: 143px;
 			height: 35px;
@@ -276,14 +283,14 @@ td {
 			font-size: 10pt;
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > .userMenu > button::after {
+		.isLogged > table > tbody > tr > td > .uiBox > .userMenu > button::after {
 			font-family: 'FontAwesome';
-			content: "\f08b";
+			content: attr(icn);
 			color: #7d5e58;
 			float: right;
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > .userMenu > button:hover {
+		.isLogged > table > tbody > tr > td > .uiBox > .userMenu > button:hover {
 			color: #b76c2b;
 			text-shadow: 0 0 16px rgb(140 167 214);
 			box-shadow: -3.1px 5.1px 22px rgb(109 88 39);
@@ -291,28 +298,28 @@ td {
 			background: #4f3d46;
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > .userMenu > button:last-child:hover {
+		.isLogged > table > tbody > tr > td > .uiBox > .userMenu > button:last-child:hover {
 			background: #c74e54;
 			color: white;
 			animation: shakeAlert 1s;
 			animation-iteration-count: infinite;
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > .userMenu > button:last-child:hover::after {
+		.isLogged > table > tbody > tr > td > .uiBox > .userMenu > button:last-child:hover::after {
 			color: white;
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > .userMenu > button:hover::after {
+		.isLogged > table > tbody > tr > td > .uiBox > .userMenu > button:hover::after {
 			color: #b76c2b;
 			text-shadow: 0 0 16px rgb(140 167 214);
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > .uiActionBtns {
+		.isLogged > table > tbody > tr > td > .uiBox > .uiActionBtns {
 			display: flex;
 			margin: 3px 0px 0px 0px;
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > .uiActionBtns > button {
+		.isLogged > table > tbody > tr > td > .uiBox > .uiActionBtns > button {
 			width: 50%;
 			font-family: 'FSElliotPro-Bold';
 			display: inline-block;
@@ -320,13 +327,13 @@ td {
 			height: 50px;
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > .uiActionBtns > button:hover {
+		.isLogged > table > tbody > tr > td > .uiBox > .uiActionBtns > button:hover {
 			background-color: #4f3d46;
 			color: #ffce6f;
 		
 		}
 		
-		.serverBox > table > tbody > tr > td > .uiBox > .uiActionBtns > button:first-child {
+		.isLogged > table > tbody > tr > td > .uiBox > .uiActionBtns > button:first-child {
 			margin: 0px 5px 0px 0px;
 		}
 
@@ -373,6 +380,22 @@ td {
 		}
 
 /* Options */
+
+/* Download */
+
+	.download {
+		margin: 10%;
+	}
+	
+	.download > .dwnTxt {
+		
+	}
+	
+	.download > .progress > .progress-bar {
+		background-color: #aac94e;
+	}
+
+/* Download */
 
 /* Just A Box */
 

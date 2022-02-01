@@ -3,6 +3,12 @@
 	<head>
 		<!-- libraries & Utils -->
 		<meta charset="UTF-8" />
+		<title>Foxxey Launcher</title>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width, height=device-height"> 
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="default">
+		<meta property="og:image" content="/app/img/logo.png">
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/bootstrap.js"></script>
 		<script src="/js/bootstrap.bundle.js"></script>
@@ -13,6 +19,7 @@
 		
 		<!-- APP JS -->
 		<script src="/app/js/notify.min.js"></script>
+		<script src="/app/js/isLogged.js"></script>
 		<script src="/app/js/formUtils.js"></script>
 		<script src="/app/js/FoxxeyGUI.js"></script>
 		<script src="/app/js/foxmdl.js"></script>
@@ -22,10 +29,14 @@
 
 		<script type="text/javascript">
 			/* Global Variables */
-			let vkBlock = "vkGrp";
-			let userData = [];
-			let servers = ['HardTech', 'FoxesWorld'];
-			//let modal = initModal();
+			const vkBlock = "srvInfo";
+			const isLogged = true;
+			const userData = [
+				{title: 'login', value: 'AidenFox', type: 'text'},
+				{title: 'balance', value: '100', type: 'text'},
+				{title: 'selectedSrv', value: 'HardTech', type: 'input'}
+			];
+			const servers = ['HardTech', 'FoxesWorld'];
 			
 			if($("#"+vkBlock).length > 0) {
 				VK.Widgets.Group(vkBlock, {mode: 4, width: "min-content", height: "500", color1: '573f26', color2: 'dce5f4', color3: '12669F'}, 168368623);
