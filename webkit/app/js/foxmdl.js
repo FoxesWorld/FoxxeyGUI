@@ -53,7 +53,9 @@ var FoxMdl = (function(){
 
 	function show(selector) {
 		console.log('Showing ' + selector);
-		$('.loadedPage').append(modalFill(selector.replace('#', "")));
+		if($(selector).length <= 0) { 
+			$('.loadedPage').append(modalFill(selector.replace('#', "")));
+		}
 		popup = document.querySelector(selector);
 		popup.classList.add('foxmdl-popup-animate');
 		activate();
