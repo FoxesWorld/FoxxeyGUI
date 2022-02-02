@@ -128,7 +128,7 @@ h3 {
 	font-family: 'FSElliotPro';
 	background-color: #eadcc97a;
     border-radius: 5px;
-    padding: 15px;
+    padding: 10px;
 }
 
 td {
@@ -190,12 +190,12 @@ td {
 		
 		.isLogged > table > tbody > tr > td {
 			vertical-align: top;
-			padding: 0px 15px 0px 0px;
+			padding: 0px 10px 0px 0px;
 			text-align: start;
 		}
 
 		.isLogged > table > tbody > tr > td > .uiBox {
-			margin: 0px;
+			margin: 0 0 5;
 		}
 		
 		
@@ -335,6 +335,14 @@ td {
 		
 		.isLogged > table > tbody > tr > td > .uiBox > .uiActionBtns > button:first-child {
 			margin: 0px 5px 0px 0px;
+		}
+		
+		.isLogged > table > tbody > tr > .actionBox {
+			height: 64px;	
+		}
+		
+		.isLogged >  table > tbody > tr > td > .playTheGame {
+			float: right;
 		}
 
 /* servers */

@@ -39,9 +39,6 @@
 	}
 				
 	function loadPage(page) {
-		if(!isLogged){
-			page = 'auth.html';
-		}
 		addAnimation('animate__backOutRight', $('#mainCont'));
 		setTimeout(() => {
 			app.content = getHTMLcontent('pages/'+page);
