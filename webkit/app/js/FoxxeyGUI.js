@@ -58,8 +58,11 @@
 					
 	function serversLoad() {
 		console.log('Loading '+ servers.length + ' servers');
-		for (var value of servers) {
-			let newSrv = '<div class="option" data-select-val="'+ value +'">'+ value +'</div>';
+		for (var row of servers) {
+			let newSrv = '<div class="option" data-select-val="'+ row.srvName +'">'+
+				 '<h4>'+row.srvName+'</h4>' +
+				 '<span>'+ row.srvVer+'</span>'+
+			'</div>';
 			$("#srvList").append(newSrv);
 		}
 	}

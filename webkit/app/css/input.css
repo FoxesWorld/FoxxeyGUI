@@ -225,8 +225,22 @@
 			color: #ffffff;
 			margin: 3px auto 5px;
 			border-radius: 5px;
-			display: inline-table;
+			display: block;
+			padding: 5px;
 		}
+		
+		.option > h4 {
+			font-size: large;
+			margin: 0;
+		}
+		
+		.option > span {
+			display: block;
+			font-size: 10pt;
+			line-height: 2;
+			font-family: 'FSElliotPro';
+		}
+		
 		.option:hover{
 			background: #4f3d46;
 			color: #ffce6f;

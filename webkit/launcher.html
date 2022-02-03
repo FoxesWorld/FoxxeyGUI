@@ -4,6 +4,7 @@
 		<!-- libraries & Utils -->
 		<meta charset="UTF-8" />
 		<title>Foxxey Launcher</title>
+		<link rel="shortcut icon" href="/app/img/favicon.ico">
 		<meta name="format-detection" content="telephone=no">
 		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width, height=device-height"> 
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -23,25 +24,23 @@
 		<script src="/app/js/formUtils.js"></script>
 		<script src="/app/js/FoxxeyGUI.js"></script>
 		<script src="/app/js/foxmdl.js"></script>
-		
-		<!-- APP STYLES -->
-		<link rel="shortcut icon" href="/app/img/favicon.ico">
+		<script src="/app/js/setCookie.js"></script>
 
 		<script type="text/javascript">
 			/* Global Variables */
 			const vkBlock = "srvInfo";
 			const isLogged = true;
+
 			const userData = [
 				{title: 'login', value: 'AidenFox', type: 'text'},
 				{title: 'balance', value: '100', type: 'text'},
 				{title: 'selectedSrv', value: 'HardTech', type: 'input'}
 			];
-			const servers = ['HardTech', 'FoxesWorld'];
-			
-			if($("#"+vkBlock).length > 0) {
-				VK.Widgets.Group(vkBlock, {mode: 4, width: "min-content", height: "500", color1: '573f26', color2: 'dce5f4', color3: '12669F'}, 168368623);
-			}
-			
+
+			const servers = [
+				{srvName: 'HardTech', srvVer: '1.12.2'},
+				{srvName: 'FoxesWorld', srvVer: '1.16.5'}
+			];
 		</script>
 
 	</head>
