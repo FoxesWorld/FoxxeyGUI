@@ -4,6 +4,8 @@ function checkAuthorisation(){
 		setTimeout(() => {
 			setUserData();
 		}, 100);
+	} else {
+		console.warn("User not authorised!");
 	}
 }
 
@@ -19,9 +21,8 @@ function setUserData(){
 					$('#'+row.title).val(row.value);
 				break;
 			}
-			
 		} else {
-			console.log('Element '+ row.title + ' was not inserted!');
+			console.warn('Element '+ row.title + ' was not inserted!');
 		}
 	}
 }

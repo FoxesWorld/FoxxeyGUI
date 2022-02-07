@@ -43,7 +43,7 @@
 		setTimeout(() => {
 			app.content = getHTMLcontent('pages/'+page);
 				checkAuthorisation();
-				formInit();
+				formInit(1000);
 				selListFunc();
 		}, 1000);
 		setTimeout(() => {

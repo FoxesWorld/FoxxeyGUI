@@ -1,5 +1,5 @@
 	
-		function formInit() {
+		function formInit(sleep) {
 			setTimeout(() => {
 				let forms = document.querySelectorAll("form");
 				if (forms.length >= 1) {
@@ -16,7 +16,7 @@
 				} else {
 					console.warn("No forms were found!");
 				}
-			}, 1000);
+			}, sleep);
 		};
 			
 		function collectFormData(form) {
